@@ -29,12 +29,13 @@ if (proofOfWork() === Number(process.env.PROOF)) {
   blockChain.addNewBlock(
     blockChain.lastBlock() && blockChain.lastBlock().prevHash
   );
+  const prevHash = blockChain.lastBlock() && blockChain.lastBlock().prevHash;
   blockChain.addNewTransaction();
-  blockChain.addNewBlock(blockChain.lastBlock().prevHash);
+  blockChain.addNewBlock(prevHash);
   blockChain.addNewTransaction();
-  blockChain.addNewBlock(blockChain.lastBlock().prevHash);
+  blockChain.addNewBlock(prevHash);
   blockChain.addNewTransaction();
-  blockChain.addNewBlock(blockChain.lastBlock().prevHash);
+  blockChain.addNewBlock(prevHash);
 }
 
 console.log("Chain: ", blockChain.chain);
