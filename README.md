@@ -1,6 +1,7 @@
 # park-hub
 
 # To run this code you need to first install all dependencies by running yarn in the CLI
+# Then run node main in the command line to see all the magic.
 
 # As this was my first experience with blockchain, I am submitting what I have because of the time complexity in which it took me to solve this problem.
 
