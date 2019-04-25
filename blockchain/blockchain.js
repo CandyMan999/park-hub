@@ -32,20 +32,28 @@ class BlockChain {
     }
     return block;
   }
-
+  //this will add a new transaction to the block with a randomly generated ticket number
   addNewTransaction() {
     this.current_transaction.push({ ticketNumber: randomstring.generate(12) });
     return this.lastBlock();
   }
-
+  //this will return the last block in the chain
   lastBlock() {
     return this.chain.slice(-1)[0];
   }
-
+  //this will return the whole chain
   getChain() {
     return this.chain;
   }
 
+  //this function should return the block with your ticket
+  getTicket(reciept) {
+    console.log("reciept: ", reciept);
+    return this.chain.filter(
+      block => block.transaction[0].ticketNumber === reciept
+    );
+  }
+  // this will return a truthy value if the chain is empty
   isEmpty() {
     return this.chain.length === 0;
   }

@@ -38,3 +38,7 @@ if (proofOfWork() === Number(process.env.PROOF)) {
 }
 
 console.log("Chain: ", blockChain.chain);
+console.log(
+  "This persons ticket and transaction: ",
+  blockChain.getTicket(blockChain.chain[1].transaction[0].ticketNumber)
+);
